@@ -34,16 +34,16 @@ def puzzler(file_name):
                 if index > index_last:
                     index_last = index
                     last = nmbr
-            if last and first :
+            if last and first:
                 sum1 += int(first + last)
-            
+
             if first:
                 sub_first = line[:index_first]
-                sub_last = line[index_last+1:]
+                sub_last = line[index_last + 1 :]
             else:
                 sub_first = line
                 sub_last = line
-                
+
             index_first = 9999
             index_last = -1
             for nmbr in list(NMBR_DICT.keys()):
@@ -54,12 +54,10 @@ def puzzler(file_name):
                 index = sub_last.rfind(nmbr)
                 if index > index_last:
                     index_last = index
-                    last =  NMBR_DICT[nmbr]
+                    last = NMBR_DICT[nmbr]
             if first and last:
                 sum2 += int(first + last)
 
-            
-            
     print(f"The answer to q1 using {file_name} is : {sum1}")
     print(f"The answer to q2 using {file_name} is : {sum2}")
     print("---")
